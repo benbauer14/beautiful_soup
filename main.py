@@ -5,4 +5,6 @@ with open("website.html") as website:
 
 soup = BeautifulSoup(contents, "html.parser")
 
-print(soup.prettify())
+
+
+print(soup.find_all(name="a"))
