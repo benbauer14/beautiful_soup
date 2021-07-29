@@ -9,4 +9,21 @@ import requests
 
 # print(anchors)
 
-response = requests.get("https://news.ycombinator.com/news")
+response = requests.get("https://news.ycombinator.com/news").text
+
+# print(website)
+
+
+soup = BeautifulSoup(response, "html.parser")
+
+
+
+articleText = soup.find(name="a", class_="storylink").getText()
+
+articleLink = soup.find(name="a", class_="storylink").get("href")
+
+articleUpvote = (soup.find(name="span", class_="score").getText())
+
+print(articleText)
+print(articleText)
+print(articleUpvote)
